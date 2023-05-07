@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-Details</title>
+    <link rel="shortcut icon" type="image/png"
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOMRZxqbo1WrBMGDi8I8nya5QsiCZs4C13d6f6xaA-uyvS_49cwiItulleYvHxO8wFaufB-UJ5Sc5faK3GqCE3EdUAV8baAphvk8PUhqMs6t1Zh0BWHhWTBuRtI0M3CD8ANSrVWN684BZCYhLOF5usWsClTBk66_jMiA6c7SWJRtmarXnkD9cwOC-BVA/s1649/flaticon.png">
+
+    <script>
+
+        function initPage() {
+            setTimeout(function () {
+                const nullcheck = document.getElementById("prdctUrl").value;
+                if (nullcheck == "null" || nullcheck == "") {
+                    document.getElementById("prdctUrl").value = "Product Url Not Found";
+                    alert("Can't find the product, Please Go back and try again");
+                    var termsLabel = document.getElementById("termsLabel");
+                    var chckbx = document.getElementById("chckbx");
+                    var frmSumtBtn = document.getElementById("frmSumtBtn")
+                    var goback = document.getElementById("goback")
+                    termsLabel.style.color = "#EE6969";
+                    termsLabel.style.fontWeight = "bold";
+                    termsLabel.innerHTML = "We Can't find the product you are searching. Please go back<br> and try again."
+                    chckbx.style.display = "none";
+                    frmSumtBtn.style.display = "none";
+                    goback.style.display = " block";
+                }
+            }, 10000);
+        }
+
+
+        // ---------------------------------------------------------------------------
+
+        function fun() {
+            window.location.href = document.referrer;
+            console.log(window.location.href);
+        }
+        // --------------------------------------------------------------------------
+
+
+        const currentUrlParam = new URLSearchParams(window.location.search).get("currentUrl");
+        const currentUrl = decodeURIComponent(currentUrlParam);
+        const prdctUrl = document.getElementById("prdctUrl");
+        prdctUrl.value = currentUrl;
+        // --------------------------------------------------------------------------
+
+
+        function alrt() {
+            
+            var A = document.getElementById("frm-name").value;
+            var B = document.getElementById("frm-pn").value;
+            var C = document.getElementById("frm-city").value;
+            var D = document.getElementById("frm-state").value;
+            var E = document.getElementById("frm-country").value;
+            var F = document.getElementById("frm-pincode").value;
+            var G = document.getElementById("frm-address").value;
+            var H = document.getElementById("frm-land").value;
+            var I = document.getElementById("prdctUrl").value;
+            var checkbx = document.getElementById("chckbx");
+            console.log(checkbx.checked);
+
+            if (A === "" || B === "" || C === "" || D === "" || E === "" || F === "" || G === "" || H === "" || !checkbx.checked) {
+                alert("Please fill out all the details.");
+            } else {
+                console.log("heree");
+                alert("Order placed Successfully");
+                setTimeout(() => {
+                    window.location.href = "https://wa.me/+917025294192"
+                }, 1000);
+            }
+        }
+    </script>
+</head>
+
+<body onload="initPage()">
+    <div class="container">
+        <div style="text-align: center; padding-top: 50px;">
+            <h2 class="heading">Fill Up Your Order Details</h2>
+        </div>
+        <!-- Inputs -->
+        <script>
+            var submitted = false;
+        </script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"
+            onload="if(submitted) {window.location='';}">
+
+        </iframe>
+
+        <div style=" padding-top: 30px;">
+            <form onsubmit="return" target="hidden_iframe" id="gform" method="POST"
+                action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfn2kfuTt51bGTp3sDgKLbyaGcPendoEAU_tpa_wj542NnRaQ/formResponse"
+                style="text-align: center;">
+
+                <input id="frm-name" class="inp-dt" type="text" placeholder="Full Name..." required
+                    name="entry.118238290"><br>
+                <input id="frm-pn" class="inp-dt" type="number" placeholder="Phone Number..." required
+                    name="entry.880843187"><br>
+                <input id="frm-city" class="inp-dt-special" type="text" placeholder="City..." required
+                    name="entry.1430051846">
+                <input id="frm-state" class="inp-dt-special" type="text" placeholder="State..." required
+                    name="entry.1927576384"><br>
+                <input id="frm-pincode" class="inp-dt-special" type="number" placeholder="Pincode..." required
+                    name="entry.430523617">
+                <input id="frm-country" class="inp-dt-special" type="text" placeholder="Country..." required
+                    name="entry.1470772245"><br>
+                <textarea style="border-width: 2px;" id="frm-address" class="inp-dt" type="text"
+                    placeholder="Address..." rows="4" required name="entry.205015708"></textarea><br>
+                <textarea style="border-width: 2px;" id="frm-land" class="inp-dt" type="text" placeholder="LandMark..."
+                    rows="4" required name="entry.1573139113"></textarea><br>
+                <input id="prdctUrl" class="inp-dt" type="text" value="https://www.flipkart.com/apple-iphone-13-midnight-128-gb/p/itmca361aab1c5b0?pid=MOBG6VF5Q82T3XRS&lid=LSTMOBG6VF5Q82T3XRSOXJLM9&marketplace=FLIPKART&store=tyy%2F4io&spotlightTagId=BestsellerId_tyy%2F4io&srno=b_1_1&otracker=clp_bannerads_1_2.bannerAdCard.BANNERADS_iphone%2B13_mobile-phones-big-saving-days-b2-sd31-store_FN86QQRXNGXM&fm=organic&iid=429bb01c-15dd-4d8f-a47a-9fc2f45009d2.MOBG6VF5Q82T3XRS.SEARCH&ppt=browse&ppn=browse&ssid=ffrkfnxzj40000001683361983300"
+                 placeholder="Product Url..." required
+                    name="entry.1681121875"><br><br><br>
+
+                <input id="chckbx" class="chckbx" type="checkbox" name="terms"  required>
+                <label id="termsLabel" class="terms" for="terms">After Submitting, you will be Automatically redirected
+                    to our<br> Whatsapp for Payments </label><br>
+                <input id="frmSumtBtn" onclick="alrt()" class="frm-smt" type="submit">
+
+            </form>
+            <center> <button onclick="fun()" id="goback" class="goback" type="submit">Go back</button></center>
+        </div>
+    </div>
+
+</body>
+
+<style>
+    .container {
+        width: 100%;
+        height: 100vh;
+    }
+
+    * {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: rgb(255, 255, 255);
+
+    }
+
+    .heading {
+        color: rgb(134, 134, 134);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .inp-dt {
+        width: 500px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: rgb(255, 255, 255);
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: rgb(108, 108, 108);
+        font-weight: 600;
+        margin-top: 13px;
+        border-style: solid;
+        border-color: rgb(210, 209, 209);
+    }
+
+    .inp-dt-special {
+        width: 237px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: rgb(255, 255, 255);
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: rgb(108, 108, 108);
+        font-weight: 600;
+        margin-top: 13px;
+        border-style: solid;
+        border-color: rgb(210, 209, 209);
+    }
+
+    .inp-dt:focus {
+        outline: none;
+    }
+
+    .inp-dt-special:focus {
+        outline: none;
+    }
+
+    .frm-smt {
+        width: 523px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: #29a380;
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: white;
+        font-weight: 600;
+        margin-top: 13px;
+    }
+
+    .goback {
+        width: 523px;
+        height: 40px;
+        border-radius: 14px;
+        border-style: none;
+        background-color: #f47676;
+        padding-left: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        color: white;
+        font-weight: 600;
+        margin-top: 13px;
+        display: none;
+    }
+
+    .terms {
+        color: rgb(124, 124, 124);
+        font-size: 13px;
+    }
+
+    .btn:hover,
+    .btn:focus {
+        background-color: rgb(22, 85, 55);
+        cursor: pointer;
+    }
+
+    .btn:active {
+        background-color: rgb(22, 85, 55);
+    }
+
+
+    @media (max-width: 768px) {
+        .inp-dt {
+            width: 370px;
+            height: 40px;
+            border-radius: 14px;
+            border-style: none;
+            background-color: rgb(255, 255, 255);
+            padding-left: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: medium;
+            color: rgb(108, 108, 108);
+            font-weight: 500;
+            margin-top: 13px;
+            border-style: solid;
+            border-color: rgb(210, 209, 209);
+        }
+
+        .frm-smt {
+            width: 250px;
+            height: 40px;
+            border-radius: 14px;
+            border-style: none;
+            background-color: #29a380;
+            ;
+            padding-left: 0px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: medium;
+            color: white;
+            font-weight: 600;
+            margin-top: 13px;
+        }
+
+        .goback {
+            width: 250px;
+            height: 40px;
+            border-radius: 14px;
+            border-style: none;
+            background-color: #f47676;
+            padding-left: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: medium;
+            color: white;
+            font-weight: 600;
+            margin-top: 13px;
+            display: none;
+        }
+
+        .inp-dt-special {
+            width: 170px;
+            height: 40px;
+            border-radius: 14px;
+            border-style: none;
+            background-color: rgb(255, 255, 255);
+            padding-left: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: medium;
+            color: rgb(108, 108, 108);
+            font-weight: 600;
+            margin-top: 13px;
+            border-style: solid;
+            border-color: rgb(210, 209, 209);
+
+        }
+
+    }
+</style>
+
+</html>
