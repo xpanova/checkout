@@ -6,19 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order-Details</title>
-    <link rel="shortcut icon" type="image/png"
+    <link  rel="shortcut icon" type="image/png"
         href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOMRZxqbo1WrBMGDi8I8nya5QsiCZs4C13d6f6xaA-uyvS_49cwiItulleYvHxO8wFaufB-UJ5Sc5faK3GqCE3EdUAV8baAphvk8PUhqMs6t1Zh0BWHhWTBuRtI0M3CD8ANSrVWN684BZCYhLOF5usWsClTBk66_jMiA6c7SWJRtmarXnkD9cwOC-BVA/s1649/flaticon.png">
 
     <script>
 
         function initPage() {
-            
             const currentUrlParam = new URLSearchParams(window.location.search).get("currentUrl");
         const currentUrl = decodeURIComponent(currentUrlParam);
-        const prdctUrl = document.getElementById("prdctUrl").value;
+        const prdctUrl = document.getElementById("prdctUrl");
         prdctUrl.value = currentUrl;
-            
-            
             setTimeout(function () {
                 const nullcheck = document.getElementById("prdctUrl").value;
                 if (nullcheck == "null" || nullcheck == "") {
@@ -38,13 +35,16 @@
             }, 2500);
         }
 
-
         // ---------------------------------------------------------------------------
-
         function fun() {
             window.location.href = document.referrer;
             console.log(window.location.href);
         }
+        // --------------------------------------------------------------------------
+        // const currentUrlParam = new URLSearchParams(window.location.search).get("currentUrl");
+        // const currentUrl = decodeURIComponent(currentUrlParam);
+        // const prdctUrl = document.getElementById("prdctUrl");
+        // prdctUrl.value = currentUrl;
         // --------------------------------------------------------------------------
         function alrt() {
             
@@ -73,7 +73,7 @@
     </script>
 </head>
 
-<body onload="initPage()">
+<body onload="initPage() ">
     <div class="container">
         <div style="text-align: center; padding-top: 50px;">
             <h2 class="heading">Fill Up Your Order Details</h2>
@@ -108,7 +108,7 @@
                     placeholder="Address..." rows="4" required name="entry.205015708"></textarea><br>
                 <textarea style="border-width: 2px;" id="frm-land" class="inp-dt" type="text" placeholder="LandMark..."
                     rows="4" required name="entry.1573139113"></textarea><br>
-                <input readonly id="prdctUrl" class="inp-dt" type="text" 
+                <input id="prdctUrl" class="inp-dt" type="text" 
                  placeholder="Product Url..." required
                     name="entry.1681121875"><br><br><br>
 
