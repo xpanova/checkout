@@ -12,6 +12,13 @@
     <script>
 
         function initPage() {
+            
+            const currentUrlParam = new URLSearchParams(window.location.search).get("currentUrl");
+        const currentUrl = decodeURIComponent(currentUrlParam);
+        const prdctUrl = document.getElementById("prdctUrl").value;
+        prdctUrl.value = currentUrl;
+            
+            
             setTimeout(function () {
                 const nullcheck = document.getElementById("prdctUrl").value;
                 if (nullcheck == "null" || nullcheck == "") {
@@ -28,7 +35,7 @@
                     frmSumtBtn.style.display = "none";
                     goback.style.display = " block";
                 }
-            }, 1000);
+            }, 2500);
         }
 
 
@@ -39,15 +46,6 @@
             console.log(window.location.href);
         }
         // --------------------------------------------------------------------------
-
-
-        const currentUrlParam = new URLSearchParams(window.location.search).get("currentUrl");
-        const currentUrl = decodeURIComponent(currentUrlParam);
-        const prdctUrl = document.getElementById("prdctUrl").value;
-        prdctUrl.value = currentUrl;
-        // --------------------------------------------------------------------------
-
-
         function alrt() {
             
             var A = document.getElementById("frm-name").value;
