@@ -43,7 +43,7 @@
 
         const currentUrlParam = new URLSearchParams(window.location.search).get("currentUrl");
         const currentUrl = decodeURIComponent(currentUrlParam);
-        const prdctUrl = document.getElementById("prdctUrl");
+        const prdctUrl = document.getElementById("prdctUrl").value;
         prdctUrl.value = currentUrl;
         // --------------------------------------------------------------------------
 
